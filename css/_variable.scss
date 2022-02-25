@@ -1,0 +1,27 @@
+$grey: #333;
+$back: rgba($color: #f7fcfe, $alpha: 0.9);
+$navy: #0f2350;
+
+
+@mixin round-button($color, $color-after) {
+    border: 1px solid #222;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: serif;
+    color: $color;
+    &:hover{
+        color: $color-after;
+    }
+}
+
+@mixin media($breakpoint: 768px) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin mediaTwo($breakpointMax: 925px) {
+    @media screen and (max-width: $breakpointMax) {
+        @content;
+    }
+}

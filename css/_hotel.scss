@@ -1,0 +1,272 @@
+@import "variable";
+
+body {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("img/divers-hotel.jpg") no-repeat top center;
+    background-size: cover;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    h1 {
+        position: fixed;
+        color: #fff;
+        padding: 0 2vw;
+        font-size: 60px;
+    }
+}
+
+#hotel {
+    z-index: 2;
+    width: 85vw;
+    position: relative;
+    margin: 0 auto;
+    .hotel-top {
+        width: 80vw;
+        height: 100vh;
+        @include media {
+            width: 100vw;
+        }
+    }
+    .hotel_inner {
+        background: $back;
+        padding: 5vh 0 0 0;
+
+        .hotel-about {
+            .hotel-about_inner {
+                margin: 0 5vw;
+
+                .about-title {
+                    margin: 2vh 0 5vh 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h2 {
+                        text-align: center;
+                        margin: 0;
+                    }
+                    small {
+                        display: inline;
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+                .slider {
+                    overflow: hidden;
+                }
+                .slider figure img {
+                    width: 20%;
+                    height: 80vh;
+                    float: left;
+                    @include media {
+                        height: 50vh;
+                    }
+                }
+                .slider figure {
+                    position: relative;
+                    width: 500%;
+                    margin: 0;
+                    left: 0;
+                    text-align: left;
+                    font-size: 0;
+                    animation: 30s slider infinite;
+                }
+                @keyframes slider {
+                    0% {
+                        left: 0%;
+                    }
+                    20% {
+                        left: 0%;
+                    }
+                    25% {
+                        left: -100%;
+                    }
+                    45% {
+                        left: -100%;
+                    }
+                    50% {
+                        left: -200%;
+                    }
+                    70% {
+                        left: -200%;
+                    }
+                    75% {
+                        left: -300%;
+                    }
+                    95% {
+                        left: -300%;
+                    }
+                    100% {
+                        left: -400%;
+                    }
+                }
+            }
+        }
+
+        .hotel-info {
+            margin: 5vh 0;
+            .hotel-info_inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: #001722 1px solid;
+                .info-title{
+                    padding: 0 1vw;
+                }
+                ul {
+                    @include media{
+                        padding: 0 1vw;
+                    }
+                    time {
+                        color: #001722;
+                    }
+                }
+            }
+        }
+
+        .hotel-rooms {
+            margin: 7vh 0;
+            .hotel-rooms_inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .rooms-title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h2 {
+                        text-align: center;
+                        margin: 0;
+                    }
+                    small {
+                        display: inline;
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+                .rooms-container {
+                    .rooms-container_inner {
+                        ul {
+                            display: flex;
+                            justify-content: space-around;
+                            flex-flow: row wrap;
+                            padding: 0;
+                            .rooms-container-box {
+                                display: flex;
+                                flex-direction: column;
+                                margin: 3vh 0;
+                                .rooms-box-img {
+                                    width: 36vw;
+                                    height: 43vh;
+                                    @include media {
+                                        width: 45vw;
+                                        height: 50vh;
+                                    }
+                                }
+                                .rooms-box-title {
+                                    width: 36vw;
+                                    h3 {
+                                        margin: 2vh 0 0 0;
+                                    }
+
+                                    @include media {
+                                        width: 40vw;
+                                    }
+                                }
+                                .rooms-btn {
+                                    width: 36vw;
+                                    text-align: center;
+                                    .rooms-btn_inner {
+                                        display: inline-block;
+                                        .btn-navy,
+                                        a.btn-navy {
+                                            color: #f7fcfe;
+                                            background-color: $navy;
+                                        }
+                                        .btn-navy:hover,
+                                        a.btn-navy:hover {
+                                            color: #f7fcfe;
+                                            background: $navy;
+                                            opacity: 0.95;
+                                        }
+                                    }
+                                    @include media {
+                                        width: 40vw;
+                                    }
+                                }
+                                @include media {
+                                    flex-flow: row;
+                                    justify-content: space-around;
+                                }
+                            }
+                            .box1 {
+                                .rooms-box-img {
+                                    background: url("img/hotel-rooms\(1\).jpg");
+                                    background-size: cover;
+                                }
+                            }
+                            .box2 {
+                                .rooms-box-img {
+                                    background: url("img/hotel-rooms\(2\).jpg");
+                                    background-size: cover;
+                                }
+                            }
+                            .box3 {
+                                .rooms-box-img {
+                                    background: url("img/hotel-rooms\(3\).jpg");
+                                    background-size: cover;
+                                }
+                            }
+                            .box4 {
+                                .rooms-box-img {
+                                    background: url("img/hotel-rooms\(4\).jpg");
+                                    background-size: cover;
+                                }
+                            }
+                            .box5 {
+                                .rooms-box-img {
+                                    background: url("img/hotel-rooms\(5\).jpg");
+                                    background-size: cover;
+                                }
+                            }
+                            .box6 {
+                                .rooms-box-img {
+                                    background: url("img/hotel-rooms\(6\).jpg");
+                                    background-size: cover;
+                                }
+                            }
+                            @include media {
+                                flex-flow: column;
+                            }
+                        }
+                    }
+                    @include media {
+                        width: 100vw;
+                    }
+                }
+            }
+        }
+    }
+    @include media {
+        width: 100vw;
+    }
+}
